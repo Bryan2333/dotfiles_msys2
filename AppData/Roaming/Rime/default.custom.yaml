@@ -1,0 +1,17 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.4
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Tue Nov 25 15:05:25 2025"
+  rime_version: 1.13.1
+patch:
+  schema_list:
+    - {schema: luna_pinyin}
+    - {schema: luna_pinyin_simp}
+  # 禁用 Ctrl+` 打开输入法菜单的功能
+  "switcher/hotkeys":
+    - F4
+  # 禁用 Shift 键的临时西文模式切换功能
+  "ascii_composer/switch_key":
+    Shift_L: noop
+    Shift_R: noop

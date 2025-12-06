@@ -1,0 +1,9 @@
+---
+name: mydict
+version: "2025.11.25"
+sort: by_weight
+use_preset_vocabulary: true
+import_tables:
+  - luna_pinyin
+  - zhwiki # 中文维基百科词库
+  - moegirl # 萌娘百科词库

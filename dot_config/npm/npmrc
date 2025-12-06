@@ -1,0 +1,4 @@
+registry=https://registry.npmmirror.com/
+prefix="C:/Users/Bryan/.local/share/npm"
+cache="C:/Users/Bryan/.cache/npm"
+logs-dir="C:/Users/Bryan/.local/state/npm/logs"

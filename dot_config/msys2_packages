@@ -1,0 +1,17 @@
+fisher
+git
+mingw-w64-ucrt-x86_64-aria2
+mingw-w64-ucrt-x86_64-bat
+mingw-w64-ucrt-x86_64-delta
+mingw-w64-ucrt-x86_64-fastfetch
+mingw-w64-ucrt-x86_64-fzf
+mingw-w64-ucrt-x86_64-gcc
+mingw-w64-ucrt-x86_64-gdu
+mingw-w64-ucrt-x86_64-go
+mingw-w64-ucrt-x86_64-lsd
+mingw-w64-ucrt-x86_64-make
+mingw-w64-ucrt-x86_64-ripgrep
+pacutils
+pkgfile
+tree
+vim
