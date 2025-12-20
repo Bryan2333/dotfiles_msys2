@@ -2,7 +2,6 @@ blocks:
   - permission
   - size
   - date
-  - git
   - name
 
 date: '+%Y/%m/%d %H:%M'
