@@ -1,6 +1,8 @@
 [core]
     quotePath = false
     pager = delta
+    autocrlf = input
+    eol = lf
 [user]
     name = BryanLiang
     email = liangrui.ch@gmail.com
