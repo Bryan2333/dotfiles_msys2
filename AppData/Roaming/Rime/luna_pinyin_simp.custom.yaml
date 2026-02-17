@@ -1,2 +1,18 @@
 patch:
+  # 导入词库
   "translator/dictionary": mydict
+  # unicode输入字符
+  "engine/translators/@after last": "lua_translator@unicode_translator"
+  recognizer/patterns/unicode: "^U([bBoOdDxX])([0-9a-fA-F]+)$"
+  # 输入emoji
+  switches/@next:
+    name: emoji_suggestion
+    reset: 1
+    states: [ "🈚︎", "🈶️" ]
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: none
+    inherit_comment: false
