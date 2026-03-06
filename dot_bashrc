@@ -9,4 +9,39 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-command -v fish >/dev/null 2>&1 && exec fish
+## XDG目录
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
+## nvm
+export nvm_data="$XDG_DATA_HOME/nvm"
+export nvm_mirror="https://mirrors.ustc.edu.cn/node"
+
+## 默认编辑器
+export EDITOR="vim"
+export VISUAL="$EDITOR"
+
+## FZF默认命令
+export FZF_DEFAULT_COMMAND="find -xdev \! \( -path '*/.git' -prune \) -printf '%P\n'"
+
+## less命令显示PUA
+export LESSUTFCHARDEF="E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p"
+
+## 扩展PATH
+export PATH="$PATH:$XDG_DATA_HOME/npm:$HOME/.local/bin"
+
+## fish shell切换判断
+if [[ "$SWITCH_TO_FISH" != "false" ]]
+then
+    command -v fish > /dev/null 2>&1 && exec fish -i
+else
+    if [[ "$TERM_PROGRAM" == "vscode" ]]
+    then
+        . "$(code --locate-shell-integration-path bash)"
+    fi
+fi
