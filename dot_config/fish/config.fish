@@ -3,7 +3,7 @@ if status is-interactive
 
     # VSCode集成
     if string match -q "$TERM_PROGRAM" "vscode"
-         . (code --locate-shell-integration-path fish)
+        . (code --locate-shell-integration-path fish)
     end
     # }}}
 
@@ -29,9 +29,4 @@ if status is-interactive
     # 键盘绑定 {{{
     bind -M insert \e\[1\;3C "commandline -i ' '"
     # }}}
-
-    ## 启动ssh-agent
-    if type -q fish_ssh_agent
-        fish_ssh_agent
-    end
 end

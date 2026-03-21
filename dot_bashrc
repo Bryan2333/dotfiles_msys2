@@ -32,8 +32,21 @@ export FZF_DEFAULT_COMMAND="find -xdev \! \( -path '*/.git' -prune \) -printf '%
 ## less命令显示PUA
 export LESSUTFCHARDEF="E000-F8FF:p,F0000-FFFFD:p,100000-10FFFD:p"
 
-## 扩展PATH
-export PATH="$PATH:$XDG_DATA_HOME/npm:$HOME/.local/bin"
+## ssh-agent桥接
+export SSH_AUTH_SOCK="${HOME}/.ssh/agent.sock"
+
+if command -v socat &>/dev/null && command -v npiperelay.exe &>/dev/null
+then
+    ssh-add -l >/dev/null 2>&1
+    if (( $? == 2 ))
+    then
+        rm -f "${SSH_AUTH_SOCK}"
+        ( setsid socat UNIX-LISTEN:${SSH_AUTH_SOCK},fork \
+            EXEC:"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",pipes \
+            >/dev/null 2>&1 & )
+    fi
+fi
+
 
 ## fish shell切换判断
 if [[ "$SWITCH_TO_FISH" != "false" ]]
