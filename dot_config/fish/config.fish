@@ -22,8 +22,6 @@ if status is-interactive
     abbr -a history 'history --show-time="%Y-%m-%d %H:%M:%S "'
 
     abbr -a aria2c 'aria2c -s16 -x16 -k1M'
-
-    abbr -a make 'mingw32-make'
     # }}}
 
     # 键盘绑定 {{{
