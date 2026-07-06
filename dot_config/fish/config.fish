@@ -8,16 +8,20 @@ if status is-interactive
     # }}}
 
     # 缩写 {{{
-    abbr -a --position anywhere rm 'rm -I'
-    abbr -a --position anywhere mv 'mv -i'
-    abbr -a --position anywhere cp 'cp -i' 
+    abbr -a rm 'rm -I'
+    abbr -a mv 'mv -i'
+    abbr -a cp 'cp -i'
+    abbr -a _sudo_rm  --command sudo --regex '^rm$'  'rm -I'
+    abbr -a _sudo_mv  --command sudo --regex '^mv$'  'mv -i'
+    abbr -a _sudo_cp  --command sudo --regex '^cp$'  'cp -i'
 
     abbr -a ls 'lsd'
     abbr -a ll 'lsd -lh'
     abbr -a la 'lsd -Alh'
     abbr -a tree 'lsd -A --tree'
 
-    abbr -a --position anywhere cat 'bat'
+    abbr -a cat 'bat'
+    abbr -a _sudo_cat --command sudo --regex '^cat$' 'bat'
 
     abbr -a history 'history --show-time="%Y-%m-%d %H:%M:%S "'
 
